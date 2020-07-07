@@ -1,0 +1,15 @@
+UID [String] (Unique Identifier) - Random String of Characters and Numbers
+		|- Req [List] - List of platforms required for this question
+		|	|- [String] Platform Identifier
+		|- Alts [Map] - List of alternate questions if platform is unavailable
+		|	|- [String] Platform Identifer
+		|		|- [String] UID of alternate question if platform is unavailable
+		|- Desc [String] - Question Description
+		|- Master [String] UID of master question / all options lead to the same question. Null if N/A
+		|- Opt [Map] - List of options to this question
+		|	|- [String] Option Text
+		|		|- [String] UID of question this option leads to
+		|- Spec [Map] - Special Effects that this question may have
+			|- [String] - Effect ID for Effect Decoder
+				|- [List] - List of Parameters for Effect Decoder
+					|- [String] - Parameter for Effect Decoder
