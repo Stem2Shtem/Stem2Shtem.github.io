@@ -1,6 +1,6 @@
 {
 	"root":{
-		"desc":"How many fingers am I holding up?",
+		"desc":"How many fingers am I holding up? ✌",
 		"opt":{
 			"Two":"twopatha",
 			"Four":"fourpatha",
@@ -29,7 +29,7 @@
 		"opt":{
 			"Bleep Blarp":"",
 			"MIB, Hands in the air!":"",
-			"Gil, is that you?":""
+			"ALIEN DANCE PARTY!":""
 		}
 	}
 }
