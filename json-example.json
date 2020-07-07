@@ -1,0 +1,35 @@
+{
+	"root":{
+		"desc":"How many fingers am I holding up?",
+		"opt":{
+			"Two":"twopatha",
+			"Four":"fourpatha",
+			"Twenty-Four":"alienz"
+		}
+	},
+	"twopatha":{
+		"desc":"Correct! Good Job!",
+		"opt":{
+			"Yay!":"",
+			"Whoo!":"",
+			"When do I get paid?":""
+		}
+	},
+	"fourpatha":{
+		"desc":"Incorrect. Check your eyes",
+		"opt":{
+			"Maybe I need glasses!":"",
+			"Can I try again?":"",
+			"Aww....":""
+		}
+	
+	},
+	"alienz":{
+		"desc":"Welcome, fellow alien. You passed the secret test!",
+		"opt":{
+			"Bleep Blarp":"",
+			"MIB, Hands in the air!":"",
+			"Gil, is that you?":""
+		}
+	}
+}
