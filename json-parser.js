@@ -5,9 +5,9 @@ var opts_tag = "opts";
 
 function load_question_body(uid){
 	if(json_body==null){
-		return fetch(target).then(response=>response.json()).then(body=>body[0]).then(function(data){if(json_body==null){json_body=data;}return data;});
+		return fetch(target).then(response=>response.json()).then(function(data){if(json_body==null){json_body=data;}return data[uid];});
 	}else{
-		return Promise.resolve(json_body);
+		return Promise.resolve(json_body[uid]);
 	}	
 }
 
