@@ -44,8 +44,8 @@
 		"desc":"Octopus Tree",
 		"opt":{
 			"Octopus Tree":"ot",
-			"Octopus Tree":"ot",
-			"Octopus Tree":"ot"
+			"Octopus Tree ":"ot",
+			"Octopus Tree  ":"ot"
 		}
 	},
 	"yes":{
