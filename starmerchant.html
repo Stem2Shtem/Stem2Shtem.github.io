@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<title>StarMerchant Dot Com</title>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nova+Mono&display=swap" rel="stylesheet">
+</head>
+<style>
+body::-webkit-scrollbar {display:none;}
+body{-ms-overflow-style:none;scrollbar-width:none;}
+*{padding:0px;margin:0px;overflow-x:hidden;font-family:"Nova Mono",monospace;}
+body{background-color:#000;}
+h2{font-size:30px;color:#fff;}
+h1.site{font-size:50px;color:#fff;}
+p.site {font-size:20px;color:#fff;}
+div.unavailable{background-color:#a00;width:35%;color:#fff;font-size:30px;border-radius:5px;border:1px #444 solid;display:inline-block;}
+div.available{background-color:#0a0;width:35%;color:#fff;font-size:30px;border-radius:5px;border:1px #444 solid;display:inline-block;}
+p.statustag{font-size:20px;display:inline-block;color:#ccc;}
+.star{border-radius:5px;position:absolute;width:1px;height:1px;background-color:#fff;z-index:-1;}
+#topbar{padding:5px;border:1px solid white;width:100%;height:100px;border-radius:10px;overflow-y:hidden;}
+#logo{color:#fff;padding-left:80px;padding-top:20px;font-family:"Nova Mono",monospace;letter-spacing:7px;position:relative;z-index:3;}
+#logo2{color:#a70;top:-67px;left:-2px;padding-left:80px;padding-top:20px;font-family:"Nova Mono",monospace;letter-spacing:7px;position:relative;z-index:2;}
+#sublogo{color:#fff;font-family:"Nova Mono",monospace;position:relative;z-index:3;top:-65px;left:40px;}
+#sublogo2{color:#a70;font-family:"Nova Mono",monospace;position:relative;z-index:2;top:-93px;left:38px;}
+
+
+#quizbutton{background-color:#44f;color:#fff;font-size:30px;border:1px solid white;padding:5px;border-radius:10px;outline:none;}
+#sitebody{width:80%;border:2px solid white;margin-top:90px;height:100%;}
+#founder{width:400px;border-radius:10px;margin:10px;border:white 3px solid;}
+</style>
+<body><center>
+<div id="topbar"><h1 id="logo"><b><i>StarMerchant.com</b></i></h1><h1 id="logo2"><b><i>StarMerchant.com</b></i></h1><h3 id="sublogo">Become A Star | Reasonable Rates Starting at $5</h3><h3 id="sublogo2">Become A Star | Reasonable Rates Starting at $5</h3></div>
+<center>
+<div id="sitebody">
+<image id="founder" src="founder-orion-r-thomas.png">
+<h2>Our Founder, Orion R. Thomas</h2>
+<br><br>
+<h1 class="site">Welcome to StarMerchant.com!</h1>
+<p class="site">Welcome to StarMerchant.com! The only place where you can find high, medium, and low-mass stars that fit your needs, along with a casual disregard for casualty and chronological dilation that would make Einstein cry! Only here can you buy stars for the price of a cup of coffee. Sure, they might be from the bargain bin, but isn't it worth it to embrace the capitalistic sense of entitlement and own a burning ball of gas that you realistically have no claim to?
+<br><br>
+Below you can find a selection of fine stars that we have available for sale. If you're interested, make sure to take the matching exam to make sure you're paired with the star that best fits your personality. </p>
+<br><br>
+
+<button id="quizbutton">Take The Patented StarMatcher™ Quiz!</button>
+<br><br>
+<div class="option available">Black Hole <p class="statustag">Available!</p></div>
+<div class="option available">Black Dwarf <p class="statustag">Available!</p></div>
+<div class="option available">Neutron Star <p class="statustag">Available!</p></div>
+<div class="option unavailable">Red Giant <p class="statustag">Sold Out!</p></div>
+<div class="option unavailable">Supernova <p class="statustag">Sold Out!</p></div>
+<div class="option unavailable">Brown Dwarf <p class="statustag">Sold Out!</p></div>
+<div class="option unavailable">Quasar <p class="statustag">Sold Out!</p></div>
+</div>
+</center>
+</center>
+<script>
+window.onload=populate_starmap();
+
+
+var height;
+
+function populate_starmap(){
+var body = document.body;
+var html = document.documentElement;
+	height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+	var map = document.body;
+	for(let i=0;i<300;i++){
+	var star = document.createElement("div");
+	star.className="star";
+	star.style.left=Math.round(Math.random()*window.innerWidth)+"px";
+	star.speed = Math.round(Math.random()*2)+1;
+	star.style.top=Math.round(Math.random()*height)+"px";
+	star.style.padding=Math.round(Math.random()*3)+"px";
+	star.style.opacity=Math.round(Math.random()*100)+"%";
+	map.appendChild(star);
+	}
+	setInterval(animate_stars,10);	
+	setInterval(star_scroll,50);
+}
+function star_scroll(){
+	for(let i=0;i<300;i++){
+		var star=document.getElementsByClassName("star")[i];
+		star.style.left=(parseInt(star.style.left.slice(0,-2))-star.speed)+"px";
+		if(parseInt(star.style.left.slice(0,-2))<=0){
+			star.style.left=window.innerWidth+"px";
+			star.speed = Math.round(Math.random()*2)+1;
+			star.style.top=Math.round(Math.random()*height)+"px";
+			star.style.padding=Math.round(Math.random()*3)+"px";
+			star.style.opacity=Math.round(Math.random()*100)+"%";
+		}
+	}
+}
+
+function animate_stars(){
+	var star = document.getElementsByClassName("star")[Math.round(Math.random()*99)];
+	star.style.opacity=Math.round(Math.random()*100)+"%";
+}
+
+
+</script>
+</body>
+</html>
