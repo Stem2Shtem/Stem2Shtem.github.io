@@ -28,7 +28,7 @@
 		"desc":"Welcome, fellow alien. You passed the secret test!",
 		"opt":{
 			"Bleep Blarp":"yes",
-			"MIB, Hands in the air!":"",
+			"MIB, Hands in the air!":"mib",
 			"ALIEN DANCE PARTY!":"adp"
 		}
 	},
@@ -81,7 +81,7 @@
 		}
 	},
 	"celebrate":{
-		"desc":"Let's celebrate! What do you want to do?"
+		"desc":"Let's celebrate! What do you want to do?",
 		"opt":{
 			"I want to do the quiz again!":"root",
 			"I want a dance party!":"dp",
