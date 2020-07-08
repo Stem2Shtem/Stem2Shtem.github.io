@@ -55,19 +55,16 @@ Below you can find a selection of fine stars that we have available for sale. If
 window.onload=populate_starmap();
 
 
-var height;
+
 
 function populate_starmap(){
-var body = document.body;
-var html = document.documentElement;
-	height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 	var map = document.body;
 	for(let i=0;i<300;i++){
 	var star = document.createElement("div");
 	star.className="star";
 	star.style.left=Math.round(Math.random()*window.innerWidth)+"px";
 	star.speed = Math.round(Math.random()*2)+1;
-	star.style.top=Math.round(Math.random()*height)+"px";
+	star.style.top=Math.round(Math.random()*document.body.clientHeight)+"px";
 	star.style.padding=Math.round(Math.random()*3)+"px";
 	star.style.opacity=Math.round(Math.random()*100)+"%";
 	map.appendChild(star);
@@ -82,7 +79,7 @@ function star_scroll(){
 		if(parseInt(star.style.left.slice(0,-2))<=0){
 			star.style.left=window.innerWidth+"px";
 			star.speed = Math.round(Math.random()*2)+1;
-			star.style.top=Math.round(Math.random()*height)+"px";
+			star.style.top=Math.round(Math.random()*document.body.clientHeight)+"px";
 			star.style.padding=Math.round(Math.random()*3)+"px";
 			star.style.opacity=Math.round(Math.random()*100)+"%";
 		}
