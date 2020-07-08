@@ -10,26 +10,92 @@
 	"twopatha":{
 		"desc":"Correct! Good Job!",
 		"opt":{
-			"Yay!":"",
-			"Whoo!":"",
-			"When do I get paid?":""
+			"Yay!":"celebrate",
+			"Whoo!":"celebrate",
+			"When do I get paid?":"pay me"
 		}
 	},
 	"fourpatha":{
 		"desc":"Incorrect. Check your eyes",
 		"opt":{
-			"Maybe I need glasses!":"",
-			"Can I try again?":"",
-			"Aww....":""
+			"Maybe I need glasses!":"toobad",
+			"Can I try again?":"root",
+			"Aww....":"toobad"
 		}
 	
 	},
 	"alienz":{
 		"desc":"Welcome, fellow alien. You passed the secret test!",
 		"opt":{
-			"Bleep Blarp":"",
+			"Bleep Blarp":"yes",
 			"MIB, Hands in the air!":"",
-			"ALIEN DANCE PARTY!":""
+			"ALIEN DANCE PARTY!":"adp"
+		}
+	},
+	"toobad":{
+		"desc":"Well, you got it wrong, so too bad!",
+		"opt":{
+			"Can I try again? Pretty Please!":"root",
+			"Give me another chance!":"root",
+			"Octopus Tree":"ot"
+		}
+	},
+	"ot":{
+		"desc":"Octopus Tree",
+		"opt":{
+			"Octopus Tree":"ot",
+			"Octopus Tree":"ot",
+			"Octopus Tree":"ot"
+		}
+	},
+	"yes":{
+		"desc":"Indeed. Let us do Alien things now",
+		"opt":{
+			"Time Travel!":"root",
+			"ALIEN DANCE PARTY!":"adp",
+			"Octopus Tree":"ot"
+		}
+	},
+	"mib":{
+		"desc":"Officer, I was expecting you. I'm using a TIME BOMB!",
+		"opt":{
+			"Time Bomb?":"root",
+			"Time Bomb!":"alienz",
+			"It's ripping a hole in time and space":"ot"
+		}
+	},
+	"adp":{
+		"desc":"Dance Party! Show us your best moves, fellow alien!",
+		"opt":{
+			"That one move with the hands":"adp",
+			"That cool thing with the legs":"adp",
+			"This is boring":"yes"
+		}
+	},
+	"pay me":{
+		"desc":"You aren't getting paid! Because guess what?",
+		"opt":{
+			"...you're an alien?":"yes",
+			"...none of this ever happened?":"root",
+			"...Octopus Tree?":"ot"
+		}
+	},
+	"celebrate":{
+		"desc":"Let's celebrate! What do you want to do?"
+		"opt":{
+			"I want to do the quiz again!":"root",
+			"I want a dance party!":"dp",
+			"I want to be paid!":"pay me"
+		}
+	},
+	"dp":{
+		"desc":"Dance Party! Show us your best moves!",
+		"opt":{
+			"That one move with the hands":"dp",
+			"That cool thing with the legs":"dp",
+			"Breakdance!":"dp"
 		}
 	}
+	
+	
 }
