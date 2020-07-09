@@ -18,15 +18,59 @@
   </div>
   <div class="container">
     <div class="question">
-      <span class="num"></span>
-      <div class="text">
+      <span class="num" id='question-num'></span>
+      <div id="question-desc" class="text">
       </div>
     </div>
     <div class="answers">
-      <button class="button"></button>
-      <button class="button"></button>
-      <button class="button"></button>
+      <div class="option selected-option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
+      <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
+      <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
     </div>
+	<center><button id="next-question" class="next-question">Next Question</button></center>
   </div>
 </body>
+<script src="json-parser-2.js">
+
+</script>
+<script>
+var loaded_question="root";
+var current_number = 1;
+
+function select(container){
+	var options=document.getElementsByClassName("selected-option");
+	for(let i=0;i<options.length;i++){
+		options[i].className="option";
+	}
+	container.className="option selected-option";
+}
+
+function load_description(uid){
+	get_question_desc(uid).then(function(p){document.getElementById(
+"question-desc").innerHTML=p;});
+}
+
+function load_options(uid){
+	 get_question_opts(uid).then(function(m){return zip(Array.prototype.slice.call(document.getElementsByClassName("option-label")),m);}).then(function(q){for(let i=0;i<q.length;i++){q[i][0].innerHTML=q[i][1];}});
+}
+
+function load_number(uid){
+	document.getElementById("question-num").innerHTML=current_number;
+}
+
+function load_question(uid){
+	load_description(uid);
+	load_options(uid);
+	load_number();
+}
+
+function load_next_question(){
+	current_number++;
+	get_next_question_uid(loaded_question).then(re=>function p(response){loaded_question=response;return response;}).then(p=>load_question(p));
+}
+
+window.onload=load_question("root");
+
+
+</script>
 </html>
