@@ -106,13 +106,13 @@ function next(){
 	if(current_set>=(answer_sets.length-1)){
 		if(getCookie("track")!=null){
 			switch(getCookie("track")){
-				case 0:
+				case "0":
 					document.location["href"]="starmerchant_about_blackholes.html";
 					break;
-				case 1:
+				case "1":
 					document.location["href"]="starmerchant_about_browndwarfs.html";
 					break;
-				case 2:
+				case "2":
 					document.location["href"]="starmerchant_about_neutronstars.html";
 					break;
 			}
