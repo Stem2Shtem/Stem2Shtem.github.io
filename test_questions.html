@@ -19,7 +19,7 @@
   <div class="container">
     <div class="question">
       <span class="num"></span>
-      <div class="text">
+      <div id="question-desc" class="text">
       </div>
     </div>
     <div class="answers">
@@ -29,6 +29,9 @@
     </div>
   </div>
 </body>
+<script src="json-parser-2.js">
+
+</script>
 <script>
 function select(container){
 	var options=document.getElementsByClassName("selected-option");
@@ -37,5 +40,22 @@ function select(container){
 	}
 	container.className="option selected-option";
 }
+
+function load_description(uid){
+	get_question_desc(uid).then(function(p){document.getElementById(
+"question-desc").innerHTML=p;});
+}
+
+function load_options(uid){
+	 get_question_opts_labels(uid).then(function(m){return zip(Array.prototype.slice.call(document.getElementsByClassName("option-label")),m);}).then(function(q){for(let i=0;i<q.length;i++){q[i][0].innerHTML=q[i][1];}});
+	get_question_opts_targets(uid).then(function(m){return zip(Array.prototype.slice.call(document.getElementsByClassName("option-label")),m);}).then(function(q){for(let i=0;i<q.length;i++){q[i][0].onclick=function(){load_question(q[i][1]);}}});
+}
+
+function load_question(uid){
+	load_description(uid);
+	load_options(uid);
+}
+
+
 </script>
 </html>
