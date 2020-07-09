@@ -27,7 +27,7 @@
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
     </div>
-	<center><button id="next-question" class="next-question">Next Question</button></center>
+	<center><button id="next-question" onclick="load_next_question()" class="next-question">Next Question</button></center>
   </div>
 </body>
 <script src="json-parser-2.js">
@@ -66,7 +66,7 @@ function load_question(uid){
 
 function load_next_question(){
 	current_number++;
-	get_next_question_uid(loaded_question).then(re=>function p(response){loaded_question=response;return response;}).then(p=>load_question(p));
+	get_next_question_uid(loaded_question).then(function p(response){loaded_question=response;return response;}).then(load_question);
 }
 
 window.onload=load_question("root");
