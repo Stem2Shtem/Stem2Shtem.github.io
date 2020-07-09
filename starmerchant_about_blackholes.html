@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<title>StarMerchant</title>
+<head>
+<link rel="shortcut icon" href="./favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nova+Mono&display=swap" rel="stylesheet">
+</head>
+<style>
+body::-webkit-scrollbar {display:none;}
+body{-ms-overflow-style:none;scrollbar-width:none;}
+*{padding:0px;margin:0px;overflow-x:hidden;font-family:"Nova Mono",monospace;}
+body{background-color:#000;}
+h2{font-size:30px;color:#fff;}
+h1.site{font-size:50px;color:#fff;}
+p.site {font-size:20px;color:#fff;}
+div.unavailable{background-color:#a00;width:35%;color:#fff;font-size:30px;border-radius:5px;border:1px #444 solid;display:inline-block;}
+div.available{background-color:#0a0;width:35%;color:#fff;font-size:30px;border-radius:5px;border:1px #444 solid;display:inline-block;}
+p.statustag{font-size:20px;display:inline-block;color:#ccc;}
+.star{border-radius:5px;position:absolute;width:1px;height:1px;background-color:#fff;z-index:-1;}
+#topbar{padding:5px;border:1px solid white;width:100%;height:100px;border-radius:10px;overflow-y:hidden;}
+#logo{color:#fff;padding-left:80px;padding-top:20px;font-family:"Nova Mono",monospace;letter-spacing:7px;position:relative;z-index:3;}
+#logo2{color:#a70;top:-67px;left:-2px;padding-left:80px;padding-top:20px;font-family:"Nova Mono",monospace;letter-spacing:7px;position:relative;z-index:2;}
+#sublogo{color:#fff;font-family:"Nova Mono",monospace;position:relative;z-index:3;top:-65px;left:40px;}
+#sublogo2{color:#a70;font-family:"Nova Mono",monospace;position:relative;z-index:2;top:-93px;left:38px;}
+
+
+#quizbutton{background-color:#44f;color:#fff;font-size:30px;border:1px solid white;padding:5px;border-radius:10px;outline:none;}
+#sitebody{width:80%;border:2px solid white;margin-top:90px;height:100%;}
+#founder{width:400px;border-radius:10px;margin:10px;border:white 3px solid;}
+</style>
+<body><center>
+<div id="topbar"><h1 id="logo"><b><i>StarMerchant.com</b></i></h1><h1 id="logo2"><b><i>StarMerchant.com</b></i></h1><h3 id="sublogo">Become A Star | Reasonable Rates Starting at $5</h3><h3 id="sublogo2">Become A Star | Reasonable Rates Starting at $5</h3></div>
+<center>
+<div id="sitebody">
+<br><br>
+<h1 class="site">About Black Holes</h1>
+<p class="site">
+<br><br>
+</p>
+<br><br>
+</div>
+</center>
+</center>
+<script>
+window.onload=populate_starmap();
+
+
+
+
+function populate_starmap(){
+	var map = document.body;
+	for(let i=0;i<300;i++){
+	var star = document.createElement("div");
+	star.className="star";
+	star.style.left=Math.round(Math.random()*0.95*window.innerWidth)+"px";
+	star.speed = Math.round(Math.random()*2)+1;
+	star.style.top=Math.round(Math.random()*document.body.clientHeight)+"px";
+	star.style.padding=Math.round(Math.random()*3)+"px";
+	star.style.opacity=Math.round(Math.random()*100)+"%";
+	map.appendChild(star);
+	}
+	setInterval(animate_stars,10);
+	setInterval(star_scroll,50);
+}
+function star_scroll(){
+	for(let i=0;i<300;i++){
+		var star=document.getElementsByClassName("star")[i];
+		star.style.left=(parseInt(star.style.left.slice(0,-2))-star.speed)+"px";
+		if(parseInt(star.style.left.slice(0,-2))<=0){
+			star.style.left=(0.95*window.innerWidth)+"px";
+			star.speed = Math.round(Math.random()*2)+1;
+			star.style.top=Math.round(Math.random()*0.95*document.body.clientHeight)+"px";
+			star.style.padding=Math.round(Math.random()*3)+"px";
+			star.style.opacity=Math.round(Math.random()*100)+"%";
+		}
+	}
+}
+
+function animate_stars(){
+	var star = document.getElementsByClassName("star")[Math.round(Math.random()*99)];
+	star.style.opacity=Math.round(Math.random()*100)+"%";
+}
+
+
+</script>
+</body>
+</html>
