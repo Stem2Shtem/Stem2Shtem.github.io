@@ -70,8 +70,8 @@ function sel(button){
 	if(radio){
 		var buttons = document.getElementsByClassName("selected");
 		for(let i=0;i<buttons.length;i++){
-			buttons[i].className="option";
 			buttons[i].selected=false;
+			buttons[i].className="option";
 		}
 	}
 	selected=true;
@@ -105,9 +105,29 @@ function next(){
 	}
 	if(current_set>=(answer_sets.length-1)){
 		if(getCookie("track")!=null){
-			alert("Congrats, you got a "+["Black Hole","Brown Dwarf","Neutron Star"][parseInt(getCookie("track"))]+"!");
+			switch(getCookie("track")){
+				case 0:
+					document.location["href"]="starmerchant_about_blackholes.html";
+					break;
+				case 1:
+					document.location["href"]="starmerchant_about_browndwarfs.html";
+					break;
+				case 2:
+					document.location["href"]="starmerchant_about_neutronstars.html";
+					break;
+			}
 		}else{
-			alert("Error : No Track Cookie Set");
+			switch(Math.round(Math.random()*3)){
+				case 0:
+					document.location["href"]="starmerchant_about_blackholes.html";
+					break;
+				case 1:
+					document.location["href"]="starmerchant_about_browndwarfs.html";
+					break;
+				case 2:
+					document.location["href"]="starmerchant_about_neutronstars.html";
+					break;
+			}
 		}
 	}else{
 		current_set++;

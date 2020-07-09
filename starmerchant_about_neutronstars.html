@@ -6,7 +6,7 @@
 </head>
 <style>
 body::-webkit-scrollbar {display:none;}
-body{-ms-overflow-style:none;scrollbar-width:none;}
+body{-ms-overflow-style:none;scrollbar-width:none;color:#fff;}
 *{padding:0px;margin:0px;overflow-x:hidden;font-family:"Nova Mono",monospace;}
 body{background-color:#000;}
 h2{font-size:30px;color:#fff;}
@@ -32,7 +32,10 @@ p.statustag{font-size:20px;display:inline-block;color:#ccc;}
 <center>
 <div id="sitebody">
 <br><br>
-<h1 class="site">About Neutron Stars</h1>
+<h1 class="site">Your Star : Neutron Star!</h1>
+<h3 id="titlestar"></h3>
+<br><br>
+<h1>About Neutron Stars</h1>
 <p class="site">
 <br><br>
 </p>
@@ -43,6 +46,7 @@ p.statustag{font-size:20px;display:inline-block;color:#ccc;}
 <script>
 window.onload=populate_starmap();
 
+document.getElementById("titlestar").innerHTML+=" ("+(60+Math.round(Math.random()*20))+"."+Math.round(Math.random()*9)+"% Match)";
 
 
 
