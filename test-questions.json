@@ -9,7 +9,7 @@
 		]
 	},
 	
-	"next":{
+	"nexty":{
 		"desc":"Success!",
 		"next":"nexty",
 		"opts":[

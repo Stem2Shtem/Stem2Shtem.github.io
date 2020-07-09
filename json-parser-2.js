@@ -1,7 +1,7 @@
 var json_body=null;
 var target="https://stem2shtem.github.io/test-questions.json";
 var desc_tag = "desc";
-var opts_tag = "opt";
+var opts_tag = "opts";
 var next_tag = "next";
 
 const zip=(a,b)=>a.map((q,i)=>[q,b[i]]);

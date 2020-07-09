@@ -132,7 +132,6 @@ body{
 .selected-option .option-radio > div{background-color:#434343;border:1px #000 solid;width:20px;height:20px;margin:4px;border-radius:15px;}
 
 
-
-
 .option-label{display:inline-block;margin-left:20px;vertical-align:middle;}
 
+.next-question {padding:10px;background-color:#ddd;border:1px solid #000;border-radius:5px;font-size:17px;outline:none;}

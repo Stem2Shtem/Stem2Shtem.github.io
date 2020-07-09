@@ -14,6 +14,8 @@ div{border:1px black solid;padding:10px;font-size:2em;}
 </body>
 <script src="json-parser.js"></script>
 <script>
+var current uid="root";
+
 function load_description(uid){
 	get_question_desc(uid).then(function(p){document.getElementsByClassName("question-description")[0].innerHTML=p;});
 }
