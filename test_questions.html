@@ -23,10 +23,19 @@
       </div>
     </div>
     <div class="answers">
-      <button class="button"></button>
-      <button class="button"></button>
-      <button class="button"></button>
+      <div class="option selected-option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
+      <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
+      <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
     </div>
   </div>
 </body>
+<script>
+function select(container){
+	var options=document.getElementsByClassName("selected-option");
+	for(let i=0;i<options.length;i++){
+		options[i].className="option";
+	}
+	container.className="option selected-option";
+}
+</script>
 </html>
