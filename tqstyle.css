@@ -143,3 +143,81 @@ body{
 .next-question:hover {
   color:#fff;
 }
+
+@keyframes glitched1 {
+		from {padding-bottom:50px;padding-left:12px;padding-right:0px;padding-top:-16px;}
+		to {padding-bottom:-23px;padding-left:32px;padding-right:12px;padding-top:-33px;}
+}
+
+@keyframes glitched2 {
+		10% {position:relative;left:0;top:0;}
+		15% {position:relative;left:45px;top:-23px;}
+		20% {position:relative;left:-20px;top:-70px;}
+		25%{position:relative;left:30px;top:40px;}
+		30% {position:relative;left:0;top:0;}
+		100% {position:relative;left:0;top:0;}
+}
+
+@keyframes glitched3 {
+		10% {position:relative;left:0;top:0;}
+		15% {position:relative;left:45px;top:5px;}
+		20% {position:relative;left:-63px;top:-2px;}
+		25%{position:relative;left:17px;top:3px;}
+		30%{position:relative;left:-53px;top:1px;}
+		35%{position:relative;left:26px;top:4px;}
+		40% {position:relative;left:0;top:0;}
+		100% {position:relative;left:0;top:0;}
+}
+
+@keyframes glitched4{
+	0%{transform:rotate(0deg) skewY(0deg) skewX(0deg);}
+	12%{transform:rotate(40deg) skewY(-32deg) skewX(12deg);}
+	14%{transform:rotate(-22deg) skewY(5deg) skewX(-19deg);}
+	19%{transform:rotate(32deg) skewY(42) skewX(192deg);}
+	25%{transform:rotate(0deg) skewY(0deg) skewX(0deg);}
+	40%{transform:rotate(0deg) skewY(0deg) skewX(0deg);}
+	49%{transform:rotate(-22deg) skewY(5deg) skewX(-19deg);}
+	55%{transform:rotate(32deg) skewY(42) skewX(192deg);}
+	67%{transform:rotate(40deg) skewY(-32deg) skewX(12deg);}
+	70%{transform:rotate(0deg) skewY(0deg) skewX(0deg);}
+}
+
+@keyframes fadetoblack{
+	from{background-color:#efefef;}
+	to{background-color:#000;}
+}
+
+
+
+.glitched1{
+	animation-name:glitched1;
+	animation-duration:0.2s;
+	animation-iteration-count:infinite;
+}
+
+.glitched2{
+	animation-name:glitched2;
+	animation-duration:1.9s;
+	animation-delay:0.9s;
+	animation-iteration-count:infinite;
+}
+
+.glitched3{
+	animation-name:glitched3;
+	animation-duration:0.8s;
+	animation-delay:0.9;
+	animation-iteration-count:infinite;
+}
+
+.glitched4{
+	animation-name:glitched4;
+	animation-duration:1.7s;
+	animation-delay:0.2s;
+	animation-iteration-count:infinite;
+}
+
+.fadetoblack{
+	animation-name:fadetoblack;
+	animation-duration:6s;
+}
+

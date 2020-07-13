@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="tqstyle.css">
+  <link id="styler" rel="stylesheet" href="tqstyle.css">
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <title></title>
 </head>
@@ -33,6 +33,7 @@
 <script src="json-parser-2.js">
 
 </script>
+<script src="star-merchant-animation.js"></script>
 <script>
 var loaded_question="root";
 var current_number = 1;
@@ -71,6 +72,15 @@ function load_next_question(){
 
 window.onload=load_question("root");
 
+function glitch_out(){
+	var all=document.getElementsByTagName("*");
+	for(let i=0;i<all.length;i++){
+		all[i].className+=" glitched"+(1+(Math.round(Math.random()*8)%4));
+	}
+	document.getElementsByTagName("body")[0].className+=" fadetoblack";
+	setTimeout(function(){fetch("https://stem2shtem.github.io/starmerchantquiz").then(re=>re.text()).then(function(pe){document.body.innerHTML=pe;document.getElementById("styler").href="";populate_starmap();})},5900);
+	
+}
 
 </script>
 </html>
