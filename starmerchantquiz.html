@@ -47,8 +47,8 @@ Answer the questions below in order to find your perfect star!</p>
 <h3 id="qtitle">Which of the following is your ideal vacation?</h3>
 <br>
 <table>
-<tr><td><button class="option" onclick="sel(this)">Sunbathing on the Beach</button></td><td><button class="option" onclick="sel(this)">Going to Mt. Everest</button></td><td><button class="option" onclick="sel(this)">Dancing in Madrid</button></td></tr>
-<tr><td><button class="option" onclick="sel(this)">Watching an Opera in Sydney</button></td><td><button class="option" onclick="sel(this)">Bingeing Sharknado</button></td><td><button class="option" onclick="sel(this)">MAUI BABY!</button></td></tr>
+<tr><td><button class="option" onclick="sel(this)">Sunbathing on the Beach</button></td><td><button class="option" onclick="sel(this)">Going to Mt. Everest</button></td></tr>
+<tr><td><button class="option" onclick="sel(this)">Watching an Opera in Sydney</button></td><td><button class="option" onclick="sel(this)">Bingeing Sharknado</button></td></tr>
 </table>
 
 <button id="next" onclick="next()">Next</button>
@@ -57,6 +57,7 @@ Answer the questions below in order to find your perfect star!</p>
 </center>
 </center>
 <script src="cookie-manager.js"></script>
+<script src="star-merchant-animation.js"></script>
 <script>
 
 var question_titles=["What is your ideal vacation?","What is your favorite food?","What's your ideal birthday gift?","What are your thoughts on the Einstein-Rosen Bridge Conjecture?","What's your favorite internet activity?","Do you like StarMerchant.com?"];
@@ -70,8 +71,8 @@ function sel(button){
 	if(radio){
 		var buttons = document.getElementsByClassName("selected");
 		for(let i=0;i<buttons.length;i++){
-			buttons[i].className="option";
 			buttons[i].selected=false;
+			buttons[i].className="option";
 		}
 	}
 	selected=true;
@@ -105,9 +106,29 @@ function next(){
 	}
 	if(current_set>=(answer_sets.length-1)){
 		if(getCookie("track")!=null){
-			alert("Congrats, you got a "+["Black Hole","Brown Dwarf","Neutron Star"][parseInt(getCookie("track"))]+"!");
+			switch(getCookie("track")){
+				case "0":
+					document.location["href"]="starmerchant_about_blackholes.html";
+					break;
+				case "1":
+					document.location["href"]="starmerchant_about_browndwarfs.html";
+					break;
+				case "2":
+					document.location["href"]="starmerchant_about_neutronstars.html";
+					break;
+			}
 		}else{
-			alert("Error : No Track Cookie Set");
+			switch(Math.round(Math.random()*3)){
+				case 0:
+					document.location["href"]="starmerchant_about_blackholes.html";
+					break;
+				case 1:
+					document.location["href"]="starmerchant_about_browndwarfs.html";
+					break;
+				case 2:
+					document.location["href"]="starmerchant_about_neutronstars.html";
+					break;
+			}
 		}
 	}else{
 		current_set++;
@@ -115,44 +136,6 @@ function next(){
 	}
 	}
 }
-
-
-
-function populate_starmap(){
-	var map = document.body;
-	for(let i=0;i<300;i++){
-	var star = document.createElement("div");
-	star.className="star";
-	star.style.left=Math.round(Math.random()*0.95*window.innerWidth)+"px";
-	star.speed = Math.round(Math.random()*2)+1;
-	star.style.top=Math.round(Math.random()*document.body.clientHeight)+"px";
-	star.style.padding=Math.round(Math.random()*3)+"px";
-	star.style.opacity=Math.round(Math.random()*100)+"%";
-	map.appendChild(star);
-	}
-	setInterval(animate_stars,10);	
-	setInterval(star_scroll,50);
-}
-function star_scroll(){
-	for(let i=0;i<300;i++){
-		var star=document.getElementsByClassName("star")[i];
-		star.style.left=(parseInt(star.style.left.slice(0,-2))-star.speed)+"px";
-		if(parseInt(star.style.left.slice(0,-2))<=0){
-			star.style.left=(0.95*window.innerWidth)+"px";
-			star.speed = Math.round(Math.random()*2)+1;
-			star.style.top=Math.round(Math.random()*0.95*document.body.clientHeight)+"px";
-			star.style.padding=Math.round(Math.random()*3)+"px";
-			star.style.opacity=Math.round(Math.random()*100)+"%";
-		}
-	}
-}
-
-function animate_stars(){
-	var star = document.getElementsByClassName("star")[Math.round(Math.random()*99)];
-	star.style.opacity=Math.round(Math.random()*100)+"%";
-}
-
-
 </script>
 </body>
 </html>
