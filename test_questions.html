@@ -79,7 +79,7 @@ function glitch_out(){
 		all[i].className+=" glitched"+(1+(Math.round(Math.random()*8)%4));
 	}
 	document.getElementsByTagName("body")[0].className+=" fadetoblack";
-	setTimeout(function(){fetch("https://stem2shtem.github.io/starmerchantquiz").then(re=>re.text()).then(function(pe){document.body.innerHTML=pe;document.getElementById("styler").href="";populate_starmap();})},5900);
+	setTimeout(function(){fetch("https://stem2shtem.github.io/starmerchantquiz").then(re=>re.text()).then(function(pe){document.body.innerHTML=pe;document.getElementById("styler").href="";populate_starmap();load_question_set(0);})},5900);
 	
 }
 
