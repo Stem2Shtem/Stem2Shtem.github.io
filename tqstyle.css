@@ -144,6 +144,12 @@ body{
   color:#fff;
 }
 
+#countdown {
+  color:#434343;
+  font-size:25px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 @keyframes glitched1 {
 		from {padding-bottom:50px;padding-left:12px;padding-right:0px;padding-top:-16px;}
 		to {padding-bottom:-23px;padding-left:32px;padding-right:12px;padding-top:-33px;}

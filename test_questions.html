@@ -28,6 +28,7 @@
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
     </div>
+    <center><span id="countdown" class="timer"></span></center>
 	<center><button id="next-question" onclick="load_next_question()" class="next-question">Next Question</button></center>
   </div>
 </body>
@@ -35,6 +36,7 @@
 
 </script>
 <script src="star-merchant-animation.js"></script>
+<script src="timer.js"></script>
 <script>
 var loaded_question="root";
 var current_number = 1;
