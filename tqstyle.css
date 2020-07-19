@@ -227,3 +227,49 @@ body{
 	animation-duration:6s;
 }
 
+.form {
+    height: 200px;
+    width: 400px;
+    background: #999 solid;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+#pwd{
+	font-size:15px;
+	padding:5px;
+	display:inline-block;
+	border-radius:5px;
+	border:2px #111 solid;
+	outline:none;
+
+}	
+
+#pwd:focus{
+	border:2px #999 solid;
+}
+
+#submit{
+	display:inline-block;
+	height:30px;
+	border:1px solid #fff;
+	background-color:#292929;
+	border-radius:10px;
+	color:#fff;
+	outline:none;
+	
+}
+	
+#myBar {
+  width: 10%;
+  font-size:15px;
+  padding:20px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}

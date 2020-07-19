@@ -8,11 +8,6 @@ body {
  
 }
 
-h1 {
-  
-
-
-}
 #pwd{
 	font-size:15px;
 	padding:5px;
@@ -38,7 +33,7 @@ h1 {
 	
 }
 	
-}#myBar {
+#myBar {
   width: 10%;
   font-size:15px;
   padding:20px;
