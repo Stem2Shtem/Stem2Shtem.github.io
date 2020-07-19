@@ -8,24 +8,27 @@
     <title>Hello!</title>
     
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="landingstyle.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="password.js" defer></script>
+	<script src="cookie-manager.js"></script>
   </head>  
   <body>
-    <h1>Welcome!</h1>
-    
+  <center>
+    <h3>Welcome to the Performance of</h3>
+	<h1>PERFORMANCE NAME HERE</h1>
+	<h3>Don't Worry! You <i>ARE</i> in the Right Place</h3>
+    <br><br>
     <p>
-      Enter the password to access the performance!</a>!
+      Please Enter the Password You Were Given Below:</a>
     </p>
     
 <!--     form -->
-    <form action="loading.html">
-    <label for="pwd">Password:</label>
-  <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
-  <input type="submit" value="Submit" onclick="shuffle()"/>
-      <div id="output"></div>
+    <form>
+  <input type="password" id="pwd" name="pwd" minlength="8">
+  <input type="button" id="submit" value="Submit" onclick="saveResult()"/>
+      <div id="output"></div></center>
 </form>
     
     <!-- include the Glitch button to show what the webpage is about and

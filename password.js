@@ -1,7 +1,7 @@
-var passwordField = document.getElementById('password');
-var goButton = document.getElementById('go');
+var passwordField = document.getElementById('pwd');
+var goButton = document.getElementById('submit');
 
-var resultField = document.getElementById('result');
+
 var password = [
   {
     correct:"0",
@@ -17,41 +17,26 @@ var password = [
   }
 ]
 
-document.cookie = "track"
-resultField.innerHTML = localStorage.getItem('password');
-
-goButton.addEventListener('click', saveResult);
 
 function saveResult() {
-  console.log('saveResult called');
- function checkPassword(password)
+  checkPassword(passwordField.value);
 }
 
 
-function checkPassword(password) {
-  if (password == password[0].correct) {
-    document.cookie = "track; expires:Thu, 18 Dec 2021 12:00:00 UTC; path=0";
+function checkPassword(pwd) {
+  if (pwd == password[0].correct) {
+    setCookie("track","0");
+	window.location.href = "loading.html";
   } 
-    else if (password == password[1].correct) {
-    document.cookie = "track; expires:Thu, 18 Dec 2021 12:00:00 UTC; path=1";
+    else if (pwd == password[1].correct) {
+    setCookie("track","1");
+	window.location.href = "loading.html";
   } 
-    else if (password == password[2].correct) {
-    document.cookie = "track; expires:Thu, 18 Dec 2021 12:00:00 UTC; path=2";
+    else if (pwd == password[2].correct) {
+    setCookie("track","2");
+	window.location.href = "loading.html";
   } 
     else {
-    alert("Incorrect");
+    alert("Incorrect Password. Please Retry.");
     }
   }
-
-function pathway() {
-  if (document.cookie.path == 0) {
-    window.location.href = "starmerchant_about_blackholes.html";
-  }
-    else if (document.cookie.path == 1) {
-    window.location.href = "starmerchant_about_neutronstars.html";
-  }
-    else if (document.cookie.path == 2) {
-      window.location.href = "starmerchant_about_blackholes.html"
-    }
-    
-}

@@ -1,0 +1,49 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color:#333;
+     color:#fff;
+ 
+}
+
+h1 {
+  
+
+
+}
+#pwd{
+	font-size:15px;
+	padding:5px;
+	display:inline-block;
+	border-radius:5px;
+	border:2px #111 solid;
+	outline:none;
+
+}	
+
+#pwd:focus{
+	border:2px #999 solid;
+}
+
+#submit{
+	display:inline-block;
+	height:30px;
+	border:1px solid #fff;
+	background-color:#292929;
+	border-radius:10px;
+	color:#fff;
+	outline:none;
+	
+}
+	
+}#myBar {
+  width: 10%;
+  font-size:15px;
+  padding:20px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
