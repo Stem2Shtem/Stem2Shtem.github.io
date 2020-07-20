@@ -40,6 +40,7 @@
 <script>
 var loaded_question="root";
 var current_number = 1;
+var track=1;
 
 function select(container){
 	var options=document.getElementsByClassName("selected-option");
@@ -66,6 +67,7 @@ function load_question(uid){
 	load_description(uid);
 	load_options(uid);
 	load_number();
+	load_question_body(uid).then(function l(p){if(l["glitch"]=="1"){glitch_out();}});
 }
 
 function load_next_question(){
@@ -73,7 +75,7 @@ function load_next_question(){
 	get_next_question_uid(loaded_question).then(function p(response){loaded_question=response;return response;}).then(load_question);
 }
 
-window.onload=load_question("root");
+window.onload=function p(){set_target("https://stem2shtem.github.io/questions-track-"+track+".json");load_question("root");}
 
 function glitch_out(){
 	var all=document.getElementsByTagName("*");

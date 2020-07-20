@@ -1,3 +1,53 @@
 {
-
+	"root":{
+		"desc":"Which type of star corpse is most like a ghost?",
+		"next":"1",
+		"opts":[
+			"Black Dwarf",
+			"Black Hole",
+			"White Dwarf",
+			"Seventh Dwarf"
+		]
+	},
+		"1":{
+		"desc":"From what do Black Dwarfs NOT evolve?",
+		"next":"2",
+		"opts":[
+			"Low mass stars",
+			"White Dwarves",
+			"High Mass Stars",
+			"Red Giants"
+		]
+	},
+		"2":{
+		"desc":"If you see a black dwarf, you must be in...?",
+		"next":"3",
+		"opts":[
+			"The distant past",
+			"The far future",
+			"The present",
+			"Comic-Con"
+		]
+	},
+		"3":{
+		"desc":"This form of star corpse may create a wormhole",
+		"next":"4",
+		"opts":[
+			"Black Hole",
+			"Black Dwarf",
+			"Neutrino Star",
+			"Tom Cruise"
+		]
+	},
+		"4":{
+		"desc":"The spot where no light can escape a black hole is...",
+		"next":"4",
+		"opts":[
+			"The Depression Zone",
+			"Mondays, Amirite?",
+			"The Event Horizon",
+			"Tom Cruise"
+		],
+		"glitch":"1"
+	}
 }
