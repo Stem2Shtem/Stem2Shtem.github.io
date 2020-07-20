@@ -65,21 +65,21 @@ Answer the questions below in order to find your perfect star!</p>
 <script>
 
 var question_titles=[
+["What is your favorite color?","Choose your ideal vacation location:","What is your favorite season?","Choose your favoirte house","If you could time travel, where would you visit?"],
 ["What would be the worst form of life after death?","What is your favorite kind of Ice Cream?","If you could save a life, would you?","Favorite type of music?","Do you feel like you're being watched?","What's your ideal vacation spot?","Do you want to own a star?"],
-[],
-[]
+["Which type of weather describes your mood today?","What is your spirit animal?","What is your favorite healing crystal","Choose your Zodiac sign based on the element that governs it","If heaven exists, who would you take with you?"]
 ];
 
 var answer_sets=[
+[["Green","Red","Blue","Black"],["Oymyakon, Russia","Dallol, Ethiopia","Mawsynram, Inda","Atacama Desert, Chile"],["Spring","Summer","Fall","Winter"],["Conteporary Home","Wood Cabin","Victorian Abode","Cozy Cottage on the beach"],["Far Future","Near Future","Recent Past","Distant Past"]],
 [["Being a ghost","Heaven/Hell","Nothing at all"],["Mint Chip","Chocolate","I'm lactose intolerant"],["Yes","No","Depends"],["Pop","Rap","Indie"],["Yes","Absolutely","Maybe"],["Beach Resort","Cabin in the Woods","Winery Retreat"],["Yes","Yes","Yes"]],
-[],
-[]
+[["Cloudy, with some chance of rain","Sunny","Tropical Cyclone","Snowy"],["Bunny","Snake","Dolphin","Humpback whale"],["Obsidian","Rose Quartz","Amethyst","Sapphire"],["Air - Gemini, Libra, Aquarius","Fire - Aries, Leo, Sagittarius","Earth - Taurus, Virgo, Capricorn","Water - Cancer, Scorpio, Pisces"],["Your friend","Your sibling","One of your parents","Nobody"]]
 ];
 
 
 
 var current_set=0;
-var track=0;
+var track=parseInt((getCookie("track")?getCookie("track"):1));
 window.onload=function(){populate_starmap();load_question_set(0);}
 var radio=true;
 var selected=false;

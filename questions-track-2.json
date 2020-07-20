@@ -1,4 +1,33 @@
 {
-
-
+	"root":{
+		"desc":"What's another name for a Neutron Star",
+		"next":"1",
+		"opts":[
+			"Protonica",
+			"Pulsar",
+			"Saiph",
+			"Canopus"
+		]
+	},
+		"1":{
+		"desc":"How are Neutron Stars formed?",
+		"next":"2",
+		"opts":[
+			"Circling disks of dust that consolidate",
+			"Giant Collisions",
+			"A collapsing Supernova",
+			"Galactic tides"
+		]
+	},
+		"2":{
+		"desc":"What do Neutron Stars send out?",
+		"next":"2",
+		"opts":[
+			"Free samples of Perfume?",
+			"Spam Mail",
+			"Pulses of Radio Waves",
+			"Bad Vibes"
+		],
+		"glitch":1
+	}
 }

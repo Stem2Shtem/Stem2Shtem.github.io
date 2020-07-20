@@ -35,12 +35,13 @@
 <script src="json-parser-2.js">
 
 </script>
+<script src="cookie-manager.js"></script>
 <script src="star-merchant-animation.js"></script>
 <script src="timer.js"></script>
 <script>
 var loaded_question="root";
 var current_number = 1;
-var track=1;
+var track=parseInt((getCookie("track")?getCookie("track"):1));
 
 function select(container){
 	var options=document.getElementsByClassName("selected-option");
@@ -67,7 +68,7 @@ function load_question(uid){
 	load_description(uid);
 	load_options(uid);
 	load_number();
-	load_question_body(uid).then(function l(p){if(l["glitch"]=="1"){glitch_out();}});
+	load_question_body(uid).then(function l(p){if(p["glitch"]==1){glitch_out();}});
 }
 
 function load_next_question(){

@@ -1,3 +1,33 @@
 {
-
+	"root":{
+		"desc":"Which of the following is not true about Black Holes?",
+		"next":"1",
+		"opts":[
+			"They are invisible",
+			"Their gravity is very strong",
+			"They are very big",
+			"They can form when a star dies"
+		]
+	},
+		"1":{
+		"desc":"How do wormholes form?",
+		"next":"2",
+		"opts":[
+			"They form by merging two black holes",
+			"They form from entangling two black holes and pulling them apart",
+			"They form from the decay of black holes",
+			"They form from light penetrating black holes and ripping them apart"
+		]
+	},
+		"2":{
+		"desc":"What is a black hole?",
+		"next":"2",
+		"opts":[
+			"School, Amirite?",
+			"A naked singularity of massive gravitation",
+			"That's what she said",
+			"A large, hairless marsupial"
+		],
+		"glitch":"1"
+	}
 }
