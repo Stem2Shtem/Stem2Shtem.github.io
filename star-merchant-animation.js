@@ -32,8 +32,9 @@ function animate_stars(){
 	star.style.opacity=Math.round(Math.random()*100)+"%";
 }
 
-var question_titles=["What is your ideal vacation?","What is your favorite food?","What's your ideal birthday gift?","What are your thoughts on the Einstein-Rosen Bridge Conjecture?","What's your favorite internet activity?","Do you like StarMerchant.com?"];
-var answer_sets=[["Sunbathing in the Carribean","Hiking on Mt. Everest","Dancing in Madrid","Watching an Opera in Sicily","Bingeing Sharknado at Home","MAUI, BABY!!!"],["Hamburger","Fried Rice","Spaghetti","Pancakes","Does Coffee Count?","My tastes are too refined for this list"],["A New Bike","Trip to the Spa","A New TV","That Swiffer I've had my eye on","Some Clothes","octopus tree"],["Huh?","<p style='font-size:20px'> I don't got no degree in Quantum-Neuro Science</p>","Those <i>ARE</i> words","<p style='font-size:10px'>While I understand the idea, I believe, like Hawking, that there is some chronological consistency with the universe and that casuality and casual loops would result from any sort of translation through time, and thus the Bridge could only span space and not time due to such protections. The Chronological Protection Conjecture, after all, makes much more sense than any form of 'wormhole'</p>","Yes.","Yeah, well I know big words too!"],["Just surfing the web","<p style='font-size:20px'>Upating my 22 followers whenever I so much as breathe</p>","Watching Web Videos","Streaming my favorite TV show","Writing AGGRESSIVE fanfiction","<p style='font-size:25px'>Well, back in my day we didn't have no internets...</p>"],["Yes","Absolutely","Of Course!","You would have to be an idiot to hate it!","Praise Orian R. Thomas!","Who wouldn't?"]];
+var track=0;
+var question_titles=[["What is your ideal vacation?","What is your favorite food?","What's your ideal birthday gift?","What are your thoughts on the Einstein-Rosen Bridge Conjecture?","What's your favorite internet activity?","Do you like StarMerchant.com?"]];
+var answer_sets=[[["Sunbathing in the Carribean","Hiking on Mt. Everest","Dancing in Madrid","Watching an Opera in Sicily","Bingeing Sharknado at Home","MAUI, BABY!!!"],["Hamburger","Fried Rice","Spaghetti","Pancakes","Does Coffee Count?","My tastes are too refined for this list"],["A New Bike","Trip to the Spa","A New TV","That Swiffer I've had my eye on","Some Clothes","octopus tree"],["Huh?","<p style='font-size:20px'> I don't got no degree in Quantum-Neuro Science</p>","Those <i>ARE</i> words","<p style='font-size:10px'>While I understand the idea, I believe, like Hawking, that there is some chronological consistency with the universe and that casuality and casual loops would result from any sort of translation through time, and thus the Bridge could only span space and not time due to such protections. The Chronological Protection Conjecture, after all, makes much more sense than any form of 'wormhole'</p>","Yes.","Yeah, well I know big words too!"],["Just surfing the web","<p style='font-size:20px'>Upating my 22 followers whenever I so much as breathe</p>","Watching Web Videos","Streaming my favorite TV show","Writing AGGRESSIVE fanfiction","<p style='font-size:25px'>Well, back in my day we didn't have no internets...</p>"],["Yes","Absolutely","Of Course!","You would have to be an idiot to hate it!","Praise Orian R. Thomas!","Who wouldn't?"]]];
 var current_set=0;
 var radio=true;
 var selected=false;
@@ -57,10 +58,10 @@ function sel(button){
 }
 
 function load_question_set(set){
-	document.getElementById("qtitle").innerHTML=question_titles[set];
+	document.getElementById("qtitle").innerHTML=question_titles[track][set];
 	var buttons=document.getElementsByClassName("option");
 	for(let i=0;i<buttons.length;i++){
-		buttons[i].innerHTML=answer_sets[set][i];
+		buttons[i].innerHTML=answer_sets[track][set][i];
 	}
 }
 

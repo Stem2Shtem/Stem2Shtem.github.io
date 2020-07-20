@@ -6,6 +6,10 @@ var next_tag = "next";
 
 const zip=(a,b)=>a.map((q,i)=>[q,b[i]]);
 
+function set_target(file){
+	target=file;
+}
+
 function load_question_body(uid){
 	if(json_body==null){
 		return fetch(target).then(re=>re.json()).then(function(dat){if(json_body==null){json_body=dat;}return dat[uid];});

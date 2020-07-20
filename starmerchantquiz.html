@@ -53,8 +53,6 @@ Answer the questions below in order to find your perfect star!</p>
 <tr><td><button class="option" onclick="sel(this)">Watching an Opera in Sydney</button></td><td><button class="option" onclick="sel(this)">Bingeing Sharknado</button></td></tr>
 </table>
 
-<p id="timer">42:00</p>
-
 <button id="next" onclick="next()">Next</button>
 
 </div>
@@ -62,13 +60,26 @@ Answer the questions below in order to find your perfect star!</p>
 </center>
 <script src="cookie-manager.js"></script>
 <script src="star-merchant-animation.js"></script>
-<<<<<<< HEAD
+
 
 <script>
 
-var question_titles=["What is your ideal vacation?","What is your favorite food?","What's your ideal birthday gift?","What are your thoughts on the Einstein-Rosen Bridge Conjecture?","What's your favorite internet activity?","Do you like StarMerchant.com?"];
-var answer_sets=[["Sunbathing in the Carribean","Hiking on Mt. Everest","Dancing in Madrid","Watching an Opera in Sicily","Bingeing Sharknado at Home","MAUI, BABY!!!"],["Hamburger","Fried Rice","Spaghetti","Pancakes","Does Coffee Count?","My tastes are too refined for this list"],["A New Bike","Trip to the Spa","A New TV","That Swiffer I've had my eye on","Some Clothes","octopus tree"],["Huh?","<p style='font-size:20px'> I don't got no degree in Quantum-Neuro Science</p>","Those <i>ARE</i> words","<p style='font-size:10px'>While I understand the idea, I believe, like Hawking, that there is some chronological consistency with the universe and that casuality and casual loops would result from any sort of translation through time, and thus the Bridge could only span space and not time due to such protections. The Chronological Protection Conjecture, after all, makes much more sense than any form of 'wormhole'</p>","Yes.","Yeah, well I know big words too!"],["Just surfing the web","<p style='font-size:20px'>Upating my 22 followers whenever I so much as breathe</p>","Watching Web Videos","Streaming my favorite TV show","Writing AGGRESSIVE fanfiction","<p style='font-size:25px'>Well, back in my day we didn't have no internets...</p>"],["Yes","Absolutely","Of Course!","You would have to be an idiot to hate it!","Praise Orian R. Thomas!","Who wouldn't?"]];
+var question_titles=[
+["What would be the worst form of life after death?","What is your favorite kind of Ice Cream?","If you could save a life, would you?","Favorite type of music?","Do you feel like you're being watched?","What's your ideal vacation spot?","Do you want to own a star?"],
+[],
+[]
+];
+
+var answer_sets=[
+[["Being a ghost","Heaven/Hell","Nothing at all"],["Mint Chip","Chocolate","I'm lactose intolerant"],["Yes","No","Depends"],["Pop","Rap","Indie"],["Yes","Absolutely","Maybe"],["Beach Resort","Cabin in the Woods","Winery Retreat"],["Yes","Yes","Yes"]],
+[],
+[]
+];
+
+
+
 var current_set=0;
+var track=0;
 window.onload=function(){populate_starmap();load_question_set(0);}
 var radio=true;
 var selected=false;
@@ -92,16 +103,20 @@ function sel(button){
 }
 
 function load_question_set(set){
-	document.getElementById("qtitle").innerHTML=question_titles[set];
+	document.getElementById("qtitle").innerHTML=question_titles[track][set];
 	var buttons=document.getElementsByClassName("option");
 	for(let i=0;i<buttons.length;i++){
-		buttons[i].innerHTML=answer_sets[set][i];
+		if(i<=(answer_sets[track][set].length-1)){
+		buttons[i].innerHTML=answer_sets[track][set][i];
+		}else{
+		buttons[i].innerHTML="Octopus Tree";
+		}
 	}
 }
 
 function next(){
 	if(selected){
-	if(current_set>=(answer_sets.length-2)){
+	if(current_set>=(answer_sets[track].length-2)){
 			document.getElementById("next").innerHTML="Get Results";
 	}
 	selected=false;
@@ -110,14 +125,14 @@ function next(){
 		buttons[i].selected=false;
 		buttons[i].className="option";
 	}
-	if(current_set>=(answer_sets.length-1)){
+	if(current_set>=(answer_sets[track].length-1)){
 		if(getCookie("track")!=null){
 			switch(getCookie("track")){
 				case "0":
 					document.location["href"]="starmerchant_about_blackholes.html";
 					break;
 				case "1":
-					document.location["href"]="starmerchant_about_browndwarfs.html";
+					document.location["href"]="starmerchant_about_blackdwarfs.html";
 					break;
 				case "2":
 					document.location["href"]="starmerchant_about_neutronstars.html";
@@ -129,7 +144,7 @@ function next(){
 					document.location["href"]="starmerchant_about_blackholes.html";
 					break;
 				case 1:
-					document.location["href"]="starmerchant_about_browndwarfs.html";
+					document.location["href"]="starmerchant_about_blackdwarfs.html";
 					break;
 				case 2:
 					document.location["href"]="starmerchant_about_neutronstars.html";
@@ -144,8 +159,5 @@ function next(){
 }
 
 </script>
-
-=======
->>>>>>> ac678a226236cddb5648c26cb0446b4db0071172
 </body>
 </html>
