@@ -4,16 +4,16 @@ var goButton = document.getElementById('submit');
 
 var password = [
   {
-    correct:"0",
+    correct:"emc23e8",
     path: "Black Hole"
   },
   {
-    correct: "1",
-    path: "Neutron Star"
+    correct: "HDn2pTLQ",
+    path: "Black Dwarf"
   },
   {
-    correct: "2",
-    path: "Black Dwarf"
+    correct: "6Equj5",
+    path: "Neutron Star"
   }
 ]
 
