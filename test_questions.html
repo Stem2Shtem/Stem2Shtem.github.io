@@ -16,6 +16,7 @@
       </ul>
     </div>
   </div>
+  <center><span id="countdown" class="timer"></span></center>
   <div class="container">
     <div class="question">
       <span class="num" id='question-num'></span>
@@ -28,7 +29,6 @@
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
     </div>
-    <center><span id="countdown" class="timer"></span></center>
 	<center><button id="next-question" onclick="load_next_question()" class="next-question">Next Question</button></center>
   </div>
 </body>
@@ -82,7 +82,7 @@ function glitch_out(){
 	}
 	document.getElementsByTagName("body")[0].className+=" fadetoblack";
 	setTimeout(function(){fetch("https://stem2shtem.github.io/starmerchantquiz").then(re=>re.text()).then(function(pe){document.body.innerHTML=pe;document.getElementById("styler").href="";populate_starmap();load_question_set(0);})},5900);
-	
+
 }
 
 </script>
