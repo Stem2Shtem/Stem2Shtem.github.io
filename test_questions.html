@@ -82,7 +82,7 @@ function load_question(uid){
 
 function load_next_question(){
 	if(selected!=null&&!loading){
-	get_correct_answer(loaded_question).then(function m(q){if(q!=null){loading=true;if(q==answer_index){selected.className="correct-option option selected-option";}else{selected.className="incorrect-option option selected-option";document.getElementsByClassName("option")[q].className="correct-option option";}setDelay(buffer_next_question,1000);}else{buffer_next_question();}});
+	get_correct_answer(loaded_question).then(function m(q){if(q!=null){loading=true;if(q==answer_index){selected.className="correct-option option selected-option";}else{selected.className="incorrect-option option selected-option";document.getElementsByClassName("option")[q].className="correct-option option";}setTimeout(buffer_next_question,1000);}else{buffer_next_question();}});
 }
 }
 
