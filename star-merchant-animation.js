@@ -10,7 +10,7 @@ function populate_starmap(){
 	star.style.opacity=Math.round(Math.random()*100)+"%";
 	map.appendChild(star);
 	}
-	setInterval(animate_stars,10);	
+	setInterval(animate_stars,10);
 	setInterval(star_scroll,50);
 }
 function star_scroll(){
@@ -80,25 +80,25 @@ function next(){
 		if(getCookie("track")!=null){
 			switch(getCookie("track")){
 				case "0":
-					document.location["href"]="starmerchant_about_blackholes.html";
+					document.location["href"]="starmerchant_high_mass.html";
 					break;
 				case "1":
-					document.location["href"]="starmerchant_about_browndwarfs.html";
+					document.location["href"]="starmerchant_low_mass.html";
 					break;
 				case "2":
-					document.location["href"]="starmerchant_about_neutronstars.html";
+					document.location["href"]="starmerchant_med_mass.html";
 					break;
 			}
 		}else{
 			switch(Math.round(Math.random()*3)){
 				case 0:
-					document.location["href"]="starmerchant_about_blackholes.html";
+					document.location["href"]="starmerchant_high_mass.html";
 					break;
 				case 1:
-					document.location["href"]="starmerchant_about_browndwarfs.html";
+					document.location["href"]="starmerchant_low_mass.html";
 					break;
 				case 2:
-					document.location["href"]="starmerchant_about_neutronstars.html";
+					document.location["href"]="starmerchant_med_mass.html";
 					break;
 			}
 		}
