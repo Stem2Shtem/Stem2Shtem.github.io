@@ -135,11 +135,11 @@ body{
 
 .selected-option .option-radio > div{background-color:#434343;border:1px #000 solid;width:20px;height:20px;margin:4px;border-radius:15px;}
 
-.correct-option .correct-option:hover{
+.correct-option {
 	background-color:#dfffdf;
 }
 
-.incorrect-option .incorrect-option:hover{
+.incorrect-option {
 	background-color:#ffdfdf;
 }
 
