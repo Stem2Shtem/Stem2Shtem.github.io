@@ -7,7 +7,8 @@
 			"Black Hole",
 			"White Dwarf",
 			"Seventh Dwarf"
-		]
+		],
+		"correct":0
 	},
 		"1":{
 		"desc":"From what do Black Dwarfs NOT evolve?",
@@ -17,7 +18,8 @@
 			"White Dwarves",
 			"High Mass Stars",
 			"Red Giants"
-		]
+		],
+		"correct":2
 	},
 		"2":{
 		"desc":"If you see a black dwarf, you must be in...?",
@@ -27,7 +29,8 @@
 			"The far future",
 			"The present",
 			"Comic-Con"
-		]
+		],
+		"correct":1
 	},
 		"3":{
 		"desc":"This form of star corpse may create a wormhole",
@@ -37,7 +40,8 @@
 			"Black Dwarf",
 			"Neutrino Star",
 			"Tom Cruise"
-		]
+		],
+		"correct":0
 	},
 		"4":{
 		"desc":"The spot where no light can escape a black hole is...",
@@ -48,6 +52,7 @@
 			"The Event Horizon",
 			"Tom Cruise"
 		],
-		"glitch":"1"
+		"glitch":"1",
+		"correct":2
 	}
 }

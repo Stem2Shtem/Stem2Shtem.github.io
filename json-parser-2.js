@@ -3,6 +3,7 @@ var target="https://stem2shtem.github.io/test-questions.json";
 var desc_tag = "desc";
 var opts_tag = "opts";
 var next_tag = "next";
+var correct_tag="correct";
 
 const zip=(a,b)=>a.map((q,i)=>[q,b[i]]);
 
@@ -28,4 +29,8 @@ function get_question_opts(uid){
 
 function get_next_question_uid(uid){
 	return load_question_body(uid).then(d=>d[next_tag]);
+}
+
+function get_correct_answer(uid){
+	return load_question_body(uid).then(d=>d[correct_tag]);
 }

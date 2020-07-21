@@ -7,7 +7,8 @@
 			"Pulsar",
 			"Saiph",
 			"Canopus"
-		]
+		],
+		"correct":1
 	},
 		"1":{
 		"desc":"How are Neutron Stars formed?",
@@ -17,7 +18,8 @@
 			"Giant Collisions",
 			"A collapsing Supernova",
 			"Galactic tides"
-		]
+		],
+		"correct":2
 	},
 		"2":{
 		"desc":"What do Neutron Stars send out?",
@@ -28,6 +30,7 @@
 			"Pulses of Radio Waves",
 			"Bad Vibes"
 		],
-		"glitch":1
+		"glitch":1,
+		"correct":2
 	}
 }

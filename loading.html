@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hello!</title>
     
+	
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="landingstyle.css">
     
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>  
   <body>
-    <h1>Please wait for the perfomance to begin.</h1>
+  <script src="cookie-manager.js"></script>
+  <center>
+    <h1>Welcome</h1>
+	<p>Please use the link below to join the performance. The performance will begin shortly. <b>Please do not close out of the browser for the duration of the performance. Thank You.</b></p>
+	<br><div id="warning"></div>
+	<br><br><button  id="start" style="padding:10px;border-radius:5px;background-color:#333;color:#fff;text-decoration:bold;border:1px#fff solid;outline:none;" onclick="window.location.href='https://ucla.zoom.us/j/3391573767';">Begin Experience</button>
 
-<!--     load -->
-   <div id="myProgress">
-  <div id="myBar">10%</div>
-</div>
+	</center>
     
   </body>
+	<script>window.onload=function p(){if(getCookie("track")==null){document.getElementById("warning").innerHTML="You currently have Cookies disabled. Please enable cookies, return to the password page, and try again.";document.getElementById("start").style.display="none";}}</script>
 </html>

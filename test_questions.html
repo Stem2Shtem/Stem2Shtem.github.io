@@ -24,8 +24,8 @@
       </div>
     </div>
     <div class="answers">
-      <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
-      <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
+      <div class="option"  onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
+      <div class="option"  onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
       <div class="option" onclick="select(this)"><div class="option-radio"><div class='option-radio-indicator'></div></div><p class="option-label"></p></div>
     </div>
@@ -42,13 +42,22 @@
 var loaded_question="root";
 var current_number = 1;
 var track=parseInt((getCookie("track")?getCookie("track"):1));
+var selected=null;
+var answer_index=0;
+var loading=false;
 
 function select(container){
-	var options=document.getElementsByClassName("selected-option");
+	if(!loading){
+	var options=document.getElementsByClassName("option");
 	for(let i=0;i<options.length;i++){
 		options[i].className="option";
+		if(options[i]==container){
+			answer_index=i;
+		}
 	}
+	selected=container;
 	container.className="option selected-option";
+	}
 }
 
 function load_description(uid){
@@ -72,9 +81,21 @@ function load_question(uid){
 }
 
 function load_next_question(){
-	current_number++;
-	get_next_question_uid(loaded_question).then(function p(response){loaded_question=response;return response;}).then(load_question);
+	if(selected!=null&&!loading){
+	get_correct_answer(loaded_question).then(function m(q){if(q!=null){loading=true;if(q==answer_index){selected.className="correct-option option selected-option";}else{selected.className="incorrect-option option selected-option";document.getElementsByClassName("option")[q].className="correct-option option";}setDelay(buffer_next_question,1000);}else{buffer_next_question();}});
 }
+}
+
+function buffer_next_question(){
+	selected=null;
+	current_number++;
+	var options=document.getElementsByClassName("option");
+	for(let i=0;i<options.length;i++){
+		options[i].className="option";
+	}
+	get_next_question_uid(loaded_question).then(function p(response){loaded_question=response;return response;}).then(load_question).then(function m(){loading=false;});
+	}
+
 
 window.onload=function p(){set_target("https://stem2shtem.github.io/questions-track-"+track+".json");load_question("root");}
 

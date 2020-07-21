@@ -7,7 +7,8 @@
 			"Their gravity is very strong",
 			"They are very big",
 			"They can form when a star dies"
-		]
+		],
+		"correct":2
 	},
 		"1":{
 		"desc":"How do wormholes form?",
@@ -17,7 +18,8 @@
 			"They form from entangling two black holes and pulling them apart",
 			"They form from the decay of black holes",
 			"They form from light penetrating black holes and ripping them apart"
-		]
+		],
+		"correct":1
 	},
 		"2":{
 		"desc":"What is a black hole?",
@@ -28,6 +30,7 @@
 			"That's what she said",
 			"A large, hairless marsupial"
 		],
-		"glitch":"1"
+		"glitch":"1",
+		"correct":1
 	}
 }
