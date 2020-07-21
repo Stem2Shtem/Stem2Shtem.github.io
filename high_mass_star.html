@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nova+Mono&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family:"Nova Mono",monospace;
+  }
+
+  body{
+    background-color: black;
+  }
+
+  .header{
+    margin-top: 50px;
+    color: white;
+    font-size: 40px
+  }
+
+  .container{
+    display: block;
+    margin: auto;
+    padding: 5% 20%;
+    font-size: 18px;
+    background-color: inherit;
+    color: white;
+  }
+
+  .passcode{
+    margin: 25px 10px 10px;
+  }
+
+  #submit{
+    padding:10px 20px;
+    color: white;
+    background-color:#483D8B;
+    border:1px solid white;
+    border-radius:5px;
+    font-size:20px;
+  }
+
+
+</style>
+
+<body>
+  <div class="header">
+      <div class="timer">
+        <center><h1>00:00</h1><center>
+      </div>
+  </div>
+  <div class="container">
+    <div id = keywords>
+      <center><div id='link0'><p>Go to this link to get the keyword to progress: </p><a href="link to twitch stream" target="_blank"><p>link to twitch stream</p></a></div></center>
+      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://www.youtube.com/channel/UC-FyPnfP2ng8zGrE2gOIRiA/live" target="_blank"><p>Link to YoutubeLive</p></a></div></center>
+      <form>
+        <div class="passcode"><center><input type="password" id="pwd" name="pwd" ></center></div>
+        <center><input type="button" id="submit" value="Submit" onclick="saveResult()"/></center>
+      </form>
+    </div>
+    <div id = returnToTest style='display: none'>
+      <center><button id = goToEnd onclick='location.href="end.html"'>Return to Reality</button></center>
+    </div>
+  </div>
+
+</body>
+<script src="json-parser-2.js"></script>
+<script src="timer.js"></script>
+<script>
+
+
+var passwordField = document.getElementById('pwd');
+var goButton = document.getElementById('submit');
+
+var password = [
+  {
+    correct:"blair456",
+    path: "0"
+  },
+  {
+    correct: "gotoreality123",
+    path: "1"
+  },
+]
+
+function saveResult() {
+  checkPassword(passwordField.value.toLowerCase());
+}
+
+function saveResult() {
+  checkPassword(passwordField.value.toLowerCase());
+}
+
+function checkPassword(pwd) {
+    var link1 = document.getElementById("link1");
+    var link2 = document.getElementById("link2");
+  if (pwd == password[0].correct) {
+        link1.style.display = "block";
+        link0.style.display = "none";
+ } else if (pwd == password[1].correct) {
+        keywords.style.display = "none";
+        returnToTest.style.display = "block";
+  } else {
+    alert("Incorrect Password. Please Retry.");
+  }
+}
+
+</script>
+</html>
