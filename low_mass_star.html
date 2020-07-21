@@ -89,6 +89,7 @@ var password = [
 
 function saveResult() {
   checkPassword(passwordField.value.toLowerCase());
+  document.getElementById("pwd").value = "";
 }
 
 function checkPassword(pwd) {
