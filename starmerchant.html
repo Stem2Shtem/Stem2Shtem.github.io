@@ -42,9 +42,9 @@ Below you can find a selection of fine stars that we have available for sale. If
 
 <button id="quizbutton" onclick='location.href="starmerchantquiz.html"'>Take The Patented StarMatcher™ Quiz!</button>
 <br><br>
-<div class="option available">Black Hole <p class="statustag">Available!</p></div>
-<div class="option available">Black Dwarf <p class="statustag">Available!</p></div>
-<div class="option available">Neutron Star <p class="statustag">Available!</p></div>
+<div class="option available">High Mass <p class="statustag">Available!</p></div>
+<div class="option available">Low Mass <p class="statustag">Available!</p></div>
+<div class="option available">Medium Mass <p class="statustag">Available!</p></div>
 <div class="option unavailable">Red Giant <p class="statustag">Sold Out!</p></div>
 <div class="option unavailable">Supernova <p class="statustag">Sold Out!</p></div>
 <div class="option unavailable">Brown Dwarf <p class="statustag">Sold Out!</p></div>
@@ -70,7 +70,7 @@ function populate_starmap(){
 	star.style.opacity=Math.round(Math.random()*100)+"%";
 	map.appendChild(star);
 	}
-	setInterval(animate_stars,10);	
+	setInterval(animate_stars,10);
 	setInterval(star_scroll,50);
 }
 function star_scroll(){
