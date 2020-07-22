@@ -25,14 +25,17 @@ function saveResult() {
 
 function checkPassword(pwd) {
   if (pwd == password[0].correct) {
+	delCookie("track");
     setCookie("track","0");
 	window.location.href = "loading.html";
   } 
     else if (pwd == password[1].correct) {
+	delCookie("track");
     setCookie("track","1");
 	window.location.href = "loading.html";
   } 
     else if (pwd == password[2].correct) {
+	delCookie("track");
     setCookie("track","2");
 	window.location.href = "loading.html";
   } 
