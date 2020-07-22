@@ -31,6 +31,14 @@
     color: white;
   }
 
+  #label{
+    color: indigo;
+  }
+
+  #label:hover{
+    color: blue;
+  }
+
   .passcode{
     margin: 25px 10px 10px;
   }
@@ -38,12 +46,15 @@
   #submit{
     padding:10px 20px;
     color: white;
-    background-color:#483D8B;
+    background-color: #191970;
     border:1px solid white;
     border-radius:5px;
     font-size:20px;
   }
 
+  #submit:hover{
+    background-color:indigo;
+  }
 
 </style>
 
@@ -55,8 +66,8 @@
   </div>
   <div class="container">
     <div id = keywords>
-      <center><div id='link0'><p>Go to this link to get the keyword to progress: </p><a href="link to twitch stream" target="_blank"><p>link to twitch stream</p></a></div></center>
-      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://docs.google.com/document/d/11BIVSYRbgE9AZt1mIsCvKTMlLwV7uqdR7wXiidv6GNg/edit" target="_blank"><p>Link to Google Doc</p></a></div></center>
+      <center><div id='link0'><p>Go to this link to get the keyword to progress: </p><a href="https://www.twitch.tv/SPPcommlink" target="_blank"><p id=label>CPP</p></a></div></center>
+      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://docs.google.com/document/d/11BIVSYRbgE9AZt1mIsCvKTMlLwV7uqdR7wXiidv6GNg/edit" target="_blank"><p id=label>Transmission From Orion</p></a></div></center>
       <form>
         <div class="passcode"><center><input type="password" id="pwd" name="pwd" ></center></div>
         <center><input type="button" id="submit" value="Submit" onclick="saveResult()"/></center>
@@ -82,7 +93,7 @@ var password = [
     path: "0"
   },
   {
-    correct: "welcomeback!",
+    correct: "leave",
     path: "1"
   },
 ]

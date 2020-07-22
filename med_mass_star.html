@@ -31,6 +31,14 @@
     color: white;
   }
 
+  #label{
+    color: indigo;
+  }
+
+  #label:hover{
+    color: blue;
+  }
+
   .passcode{
     margin: 25px 10px 10px;
   }
@@ -38,10 +46,14 @@
   #submit{
     padding:10px 20px;
     color: white;
-    background-color:#483D8B;
+    background-color: #191970;
     border:1px solid white;
     border-radius:5px;
     font-size:20px;
+  }
+
+  #submit:hover{
+    background-color:indigo;
   }
 
 
@@ -55,8 +67,20 @@
   </div>
   <div class="container">
     <div id = keywords>
-      <center><div id='link0'><p>Go to this link to get the keyword to progress: </p><a href="link to twitch stream" target="_blank"><p>link to twitch stream</p></a></div></center>
-      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://map.highfidelity.com/tV83BU0Wcgqllsj6/?map=https%3A%2F%2Fi.imgur.com%2F2RiLUkz.jpg" target="_blank"><p>Link to High FIdelity</p></a></div></center>
+      <center><div id='link0'>
+        <p>Go to this link to get the keyword to progress: </p>
+        <p style='color: gray;'>Use Ctrl/Cmd + f to find your country or city and dial</p>
+        <a href="https://ucla.zoom.us/u/aeuH679zv4" target="_blank"><p id=label>1(800)-STAR-ORACLE</p></a>
+        <p style='color: gray; font-size: 24px'>OR</p>
+        <p style='color: gray;'>Join via Zoom</p>
+        <a href="https://ucla.zoom.us/j/3391573767" target="_blank"><p id=label>Star Oracle</p></a>
+      </div></center>
+      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://www.youtube.com/watch?v=x69g7pQLTn0&feature=youtu.be" target="_blank"><p id=label>Star Transformation</p></a></div></center>
+      <center><div id = 'link2' style='display: none'>
+        <p>Go to this link to get the keyword to progress: </p>
+        <p style='color: gray;'>You are about to enter the celestial plane. Use your arrow keys/mouse to control your movement. You can zoom in and out to view the larger plane. Please go to the white clearing. This is a large space; you won’t be able to hear those you are not close to.</p>
+        <a href="https://map.highfidelity.com/tV83BU0Wcgqllsj6/?map=https%3A%2F%2Fi.imgur.com%2F2RiLUkz.jpg" target="_blank"><p id=label>Celestial Plane</p></a></div>
+      </center>
       <form>
         <div class="passcode"><center><input type="password" id="pwd" name="pwd" ></center></div>
         <center><input type="button" id="submit" value="Submit" onclick="saveResult()"/></center>
@@ -77,12 +101,16 @@ var goButton = document.getElementById('submit');
 
 var password = [
   {
-    correct:"staroracle456",
+    correct:"evolve",
     path: "0"
   },
   {
-    correct: "gotoreality123",
+    correct: "star",
     path: "1"
+  },
+  {
+    correct: "reality",
+    path: "2"
   },
 ]
 
@@ -98,6 +126,10 @@ function checkPassword(pwd) {
         link1.style.display = "block";
         link0.style.display = "none";
  } else if (pwd == password[1].correct) {
+       link2.style.display = "block";
+       link1.style.display = "none";
+       link0.style.display = "none";
+ }else if (pwd == password[2].correct) {
         keywords.style.display = "none";
         returnToTest.style.display = "block";
   } else {

@@ -31,6 +31,14 @@
     color: white;
   }
 
+  #label{
+    color: indigo;
+  }
+
+  #label:hover{
+    color: blue;
+  }
+
   .passcode{
     margin: 25px 10px 10px;
   }
@@ -38,10 +46,14 @@
   #submit{
     padding:10px 20px;
     color: white;
-    background-color:#483D8B;
+    background-color: #191970;
     border:1px solid white;
     border-radius:5px;
     font-size:20px;
+  }
+
+  #submit:hover{
+    background-color:indigo;
   }
 
 
@@ -55,8 +67,8 @@
   </div>
   <div class="container">
     <div id = keywords>
-      <center><div id='link0'><p>Go to this link to get the keyword to progress: </p><a href="link to twitch stream" target="_blank"><p>link to twitch stream</p></a></div></center>
-      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://www.youtube.com/channel/UC-FyPnfP2ng8zGrE2gOIRiA/live" target="_blank"><p>Link to YoutubeLive</p></a></div></center>
+      <center><div id='link0'><p>Go to this link to get the keyword to progress: </p><a href="https://ucla.zoom.us/j/3703228929" target="_blank"><p id=label>Ansel & Blair's Ship</p></a></div></center>
+      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://www.youtube.com/channel/UC-FyPnfP2ng8zGrE2gOIRiA/live" target="_blank"><p id=label>Through the Wormhole</p></a></div></center>
       <form>
         <div class="passcode"><center><input type="password" id="pwd" name="pwd" ></center></div>
         <center><input type="button" id="submit" value="Submit" onclick="saveResult()"/></center>
