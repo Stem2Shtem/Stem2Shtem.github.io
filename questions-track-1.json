@@ -6,7 +6,7 @@
 			"Black Dwarf",
 			"Black Hole",
 			"White Dwarf",
-			"Seventh Dwarf"
+			"Supernova"
 		],
 		"correct":0
 	},
@@ -28,7 +28,7 @@
 			"The distant past",
 			"The far future",
 			"The present",
-			"Comic-Con"
+			"A quantum tunnel"
 		],
 		"correct":1
 	},
@@ -39,7 +39,7 @@
 			"Black Hole",
 			"Black Dwarf",
 			"Neutrino Star",
-			"Tom Cruise"
+			"None of the above"
 		],
 		"correct":0
 	},
