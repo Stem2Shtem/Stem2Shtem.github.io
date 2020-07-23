@@ -30,6 +30,8 @@
     background-color: inherit;
     color: white;
   }
+  
+  
 
   #label{
     color: indigo;
@@ -39,6 +41,23 @@
     color: blue;
   }
 
+	#link {
+		padding:20px;background-color:#fff;border-radius:10px;border:3px solid #999;color:#000;
+	}
+	
+	#link:hover {
+		border:3px solid #00f;
+	}
+	
+	.updated-animated {animation-name:updated;
+	animation-duration:2s;
+	animation-iteration-count:infinite;}
+	
+	@keyframes updated {
+		0% {background-color:#ff9;}
+		50% {background-color:#fff;}
+		100% {background-color:#ff9;}
+	}
   .passcode{
     margin: 25px 10px 10px;
   }
@@ -56,22 +75,28 @@
     background-color:indigo;
   }
 
+	input{
+		outline:none;
+	}
 </style>
 
 <body>
   <div class="header">
-      <div class="timer">
-        <center><h1>00:00</h1><center>
-      </div>
   </div>
   <div class="container">
     <div id = keywords>
-      <center><div id='link0'><p>Go to this link to get the keyword to progress: </p><a href="https://www.twitch.tv/SPPcommlink" target="_blank"><p id=label>CPP</p></a></div></center>
-      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://docs.google.com/document/d/11BIVSYRbgE9AZt1mIsCvKTMlLwV7uqdR7wXiidv6GNg/edit" target="_blank"><p id=label>Transmission From Orion</p></a></div></center>
-      <form>
-        <div class="passcode"><center><input type="password" id="pwd" name="pwd" ></center></div>
-        <center><input type="button" id="submit" value="Submit" onclick="saveResult()"/></center>
-      </form>
+	<center>
+	<div id='flavour'><h2 id="fheader">PLEASE CLICK LINK BELOW</h2><p id="ftext">Please go to the link below and obtain the passcode to progress</p></div>
+	<br><a onclick="this.children[0].className='';" id='send' target="_blank" href="https://www.twitch.tv/SPPcommlink">
+	<div id='link'>Official CPP ComLink</div></a>
+		  <div id='control'>
+		  <br><br><br>
+		<p>Once Given, Please Enter Passcode Here:</p>
+        <div class="passcode"><input type="password" id="pwd" name="pwd" ></div>
+        <input type="button" id="submit" value="Submit" onclick="saveResult()"/>
+		</div>
+	</center>
+
     </div>
     <div id = returnToTest style='display: none'>
       <center><button id = goToEnd onclick='location.href="end.html"'>Return to Reality</button></center>
@@ -79,8 +104,7 @@
   </div>
 
 </body>
-<script src="json-parser-2.js"></script>
-<script src="timer.js"></script>
+
 <script>
 
 
@@ -104,14 +128,26 @@ function saveResult() {
 }
 
 function checkPassword(pwd) {
-    var link1 = document.getElementById("link1");
-    var link2 = document.getElementById("link2");
+	var link=document.getElementById("link");
+	var send=document.getElementById("send");
+	var control=document.getElementById("control");
+	var flavour=document.getElementById("flavour");
+	var fheader=document.getElementById("fheader");
+	var ftext=document.getElementById("ftext");
+
   if (pwd == password[0].correct) {
-        link1.style.display = "block";
-        link0.style.display = "none";
+		link.className="updated-animated";
+		send.href="https://docs.google.com/document/d/11BIVSYRbgE9AZt1mIsCvKTMlLwV7uqdR7wXiidv6GNg/edit";
+		link.innerHTML="> URGENT TRANSMISSION, SENDER : 'ORION' <";
+
  } else if (pwd == password[1].correct) {
-        keywords.style.display = "none";
-        returnToTest.style.display = "block";
+	control.style.display="none";
+	link.className="updated-animated";
+	send.href="end";
+
+		link.innerHTML="Return to the Quiz";
+		fheader.innerHTML="SPP Credentials Accepted";
+		ftext.innerHTML="Please click below to return to PID : 'STAR_EXPLORATION_FORCE_QUIZ'";
   } else {
     alert("Incorrect Password. Please Retry.");
   }

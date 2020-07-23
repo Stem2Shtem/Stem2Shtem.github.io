@@ -55,43 +55,51 @@
   #submit:hover{
     background-color:indigo;
   }
-
+	input{
+		outline:none;
+	}
+		#link {
+		padding:20px;background-color:#fff;border-radius:10px;border:3px solid #999;color:#000;
+	}
+	
+	#link:hover {
+		border:3px solid #00f;
+	}
+	
+	.updated-animated {animation-name:updated;
+	animation-duration:2s;
+	animation-iteration-count:infinite;}
+	
+	@keyframes updated {
+		0% {background-color:#ff9;}
+		50% {background-color:#fff;}
+		100% {background-color:#ff9;}
 
 </style>
 
 <body>
   <div class="header">
-      <div class="timer">
-        <center><h1>00:00</h1><center>
-      </div>
+
   </div>
   <div class="container">
     <div id = keywords>
-      <center><div id='link0'>
-        <p>Go to this link to get the keyword to progress: </p>
-        <p style='color: gray;'>Use Ctrl/Cmd + f to find your country or city and dial:</p>
-        <a href="https://ucla.zoom.us/u/aeuH679zv4" target="_blank"><p id=label>339 157 3767</p></a>
-        <p style='color: gray; font-size: 24px'>OR</p>
-      </div></center>
-      <center><div id = 'link1' style='display: none'><p>Go to this link to get the keyword to progress: </p><a href="https://www.youtube.com/watch?v=x69g7pQLTn0&feature=youtu.be" target="_blank"><p id=label>Star Transformation</p></a></div></center>
-      <center><div id = 'link2' style='display: none'>
-        <p>Go to this link to get the keyword to progress: </p>
-        <p style='color: gray;'>You are about to enter the celestial plane. Use your arrow keys/mouse to control your movement. You can zoom in and out to view the larger plane. Please go to the white clearing. This is a large space; you won’t be able to hear those you are not close to.</p>
-        <a href="https://map.highfidelity.com/tV83BU0Wcgqllsj6/?map=https%3A%2F%2Fi.imgur.com%2F2RiLUkz.jpg" target="_blank"><p id=label>Celestial Plane</p></a></div>
-      </center>
-      <form>
-        <div class="passcode"><center><input type="password" id="pwd" name="pwd" ></center></div>
-        <center><input type="button" id="submit" value="Submit" onclick="saveResult()"/></center>
-      </form>
-    </div>
-    <div id = returnToTest style='display: none'>
-      <center><button id = goToEnd onclick='location.href="end.html"'>Return to Reality</button></center>
+	<center>
+	<div id='flavour'><h2 id="fheader">PLEASE CLICK LINK BELOW</h2><p id="ftext">Please go to the link below and obtain the passcode to progress</p></div>
+
+	<br><p id="helptext" color="gray">(Use Control/Command-F to find your Country Easier)</p><br><a onclick="this.children[0].className='';" id='send' target="_blank" href="https://ucla.zoom.us/u/aeuH679zv4">
+	<div id='link'>Please Locate Your Country And Dial The Corresponding Number</div></a>
+		  <div id='control'>
+		  <br><br><br>
+		<p>Once Given, Please Enter Passcode Here:</p>
+        <div class="passcode"><input type="password" id="pwd" name="pwd" ></div>
+        <input type="button" id="submit" value="Submit" onclick="saveResult()"/>
+		</div>
+	</center>
+
     </div>
   </div>
 
 </body>
-<script src="json-parser-2.js"></script>
-<script src="timer.js"></script>
 <script>
 
 var passwordField = document.getElementById('pwd');
@@ -118,18 +126,35 @@ function saveResult() {
 }
 
 function checkPassword(pwd) {
-    var link1 = document.getElementById("link1");
-    var link2 = document.getElementById("link2");
+	var link=document.getElementById("link");
+	var send=document.getElementById("send");
+	var control=document.getElementById("control");
+	var flavour=document.getElementById("flavour");
+	var fheader=document.getElementById("fheader");
+	var ftext=document.getElementById("ftext");
+	var helptext=document.getElementById("helptext");
+
   if (pwd == password[0].correct) {
-        link1.style.display = "block";
-        link0.style.display = "none";
- } else if (pwd == password[1].correct) {
-       link2.style.display = "block";
-       link1.style.display = "none";
-       link0.style.display = "none";
+		link.className="updated-animated";
+		helptext.innerHTML="";
+		send.href="https://www.youtube.com/watch?v=x69g7pQLTn0&feature=youtu.be";
+		link.innerHTML="Star Transformation";
+
+ } else if(pwd==password[1].correct){
+ 		link.className="updated-animated";
+		helptext.innerHTML="Once in the Celestial Plane, use Mouse/Arrow Keys to Move Around, and Scroll to zoom in/out. Please go to the white clearing; you will not be able to hear those far away from you.";
+	send.href="https://map.highfidelity.com/tV83BU0Wcgqllsj6/?map=https%3A%2F%2Fi.imgur.com%2F2RiLUkz.jpg";
+	link.innerHTML="Celestial Plane"
+	
  }else if (pwd == password[2].correct) {
-        keywords.style.display = "none";
-        returnToTest.style.display = "block";
+	control.style.display="none";
+	helptext.innerHTML="";
+	link.className="updated-animated";
+	send.href="end";
+
+		link.innerHTML="Return to the Quiz";
+		fheader.innerHTML="Celestial Bridge Established!";
+		ftext.innerHTML="Please click below to return to the 3-Dimensional World!";
   } else {
     alert("Incorrect Password. Please Retry.");
   }
