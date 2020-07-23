@@ -89,7 +89,7 @@
 
 	<br><div id="helptext" color="gray">
     <p>Please Dial : <br>
-		United States (West Coast) : +1 669 900 6833 <br> United States (East Coast) : +1 646 558 9805<br><br>
+		United States (West Coast) : +1 669 900 6833 <br> United States (East Coast) : +1 646 558 9805<br>India : +94 115 114 131 7<br><br>
 	</p>
     <p style="color:yellow">Meeting ID: 339 157 3767</p><br></div>
     <a onclick="this.children[0].className='';" id='send' target="_blank" href="https://ucla.zoom.us/u/aeuH679zv4">
@@ -142,13 +142,14 @@ function checkPassword(pwd) {
 	var helptext=document.getElementById("helptext");
 
   if (pwd == password[0].correct) {
-		ftext=.innerHTML="Please go to the link below and obtain the passcode to progress";
+		ftext.innerHTML="Please go to the link below and obtain the passcode to progress";
 		link.className="updated-animated";
 		helptext.innerHTML="";
 		send.href="https://youtu.be/vShEPG_NRlM";
 		link.innerHTML="Star Transformation";
 
  } else if(pwd==password[1].correct){
+	ftext.innerHTML="Please go to the link below and obtain the passcode to progress";
  		link.className="updated-animated";
 		helptext.innerHTML="Once in the Celestial Plane, use Mouse/Arrow Keys to Move Around, and Scroll to zoom in/out. Please go to the white clearing; you will not be able to hear those far away from you.";
 	send.href="https://map.highfidelity.com/tV83BU0Wcgqllsj6/?map=https%3A%2F%2Fi.imgur.com%2F2RiLUkz.jpg";
