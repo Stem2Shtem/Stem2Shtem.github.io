@@ -61,19 +61,20 @@
 		#link {
 		padding:20px;background-color:#fff;border-radius:10px;border:3px solid #999;color:#000;
 	}
-	
+
 	#link:hover {
 		border:3px solid #00f;
 	}
-	
+
 	.updated-animated {animation-name:updated;
 	animation-duration:2s;
 	animation-iteration-count:infinite;}
-	
+
 	@keyframes updated {
 		0% {background-color:#ff9;}
 		50% {background-color:#fff;}
 		100% {background-color:#ff9;}
+  }
 
 </style>
 
@@ -137,7 +138,7 @@ function checkPassword(pwd) {
   if (pwd == password[0].correct) {
 		link.className="updated-animated";
 		helptext.innerHTML="";
-		send.href="https://www.youtube.com/watch?v=x69g7pQLTn0&feature=youtu.be";
+		send.href="https://youtu.be/vShEPG_NRlM";
 		link.innerHTML="Star Transformation";
 
  } else if(pwd==password[1].correct){
@@ -145,7 +146,7 @@ function checkPassword(pwd) {
 		helptext.innerHTML="Once in the Celestial Plane, use Mouse/Arrow Keys to Move Around, and Scroll to zoom in/out. Please go to the white clearing; you will not be able to hear those far away from you.";
 	send.href="https://map.highfidelity.com/tV83BU0Wcgqllsj6/?map=https%3A%2F%2Fi.imgur.com%2F2RiLUkz.jpg";
 	link.innerHTML="Celestial Plane"
-	
+
  }else if (pwd == password[2].correct) {
 	control.style.display="none";
 	helptext.innerHTML="";
