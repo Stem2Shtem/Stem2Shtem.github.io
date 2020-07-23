@@ -85,7 +85,7 @@
   <div class="container">
     <div id = keywords>
 	<center>
-	<div id='flavour'><h2 id="fheader">PLEASE CLICK LINK BELOW</h2><p id="ftext">Please go to the link below and obtain the passcode to progress</p></div>
+	<div id='flavour'><h2 id="fheader">PLEASE CLICK LINK BELOW</h2><p id="ftext">Please use your phone to dial the number below<br>On that call, you will obtain the passcode to progress</p></div>
 
 	<br><div id="helptext" color="gray">
     <p>Please Dial : <br>
@@ -142,6 +142,7 @@ function checkPassword(pwd) {
 	var helptext=document.getElementById("helptext");
 
   if (pwd == password[0].correct) {
+		ftext=.innerHTML="Please go to the link below and obtain the passcode to progress";
 		link.className="updated-animated";
 		helptext.innerHTML="";
 		send.href="https://youtu.be/vShEPG_NRlM";
