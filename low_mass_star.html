@@ -110,6 +110,16 @@
 
 var passwordField = document.getElementById('pwd');
 var goButton = document.getElementById('submit');
+var link=document.getElementById("link");
+var send=document.getElementById("send");
+var control=document.getElementById("control");
+var flavour=document.getElementById("flavour");
+var fheader=document.getElementById("fheader");
+var ftext=document.getElementById("ftext");
+var audio=document.createElement("audio");
+audio.src="blackground.mp3";
+audio.loop=true;
+audio.volume=0.4;
 
 var password = [
   {
@@ -128,15 +138,12 @@ function saveResult() {
 }
 
 function checkPassword(pwd) {
-	var link=document.getElementById("link");
-	var send=document.getElementById("send");
-	var control=document.getElementById("control");
-	var flavour=document.getElementById("flavour");
-	var fheader=document.getElementById("fheader");
-	var ftext=document.getElementById("ftext");
+
+	
 
   if (pwd == password[0].correct) {
 		link.className="updated-animated";
+		audio.play();
 		send.href="https://docs.google.com/document/d/11BIVSYRbgE9AZt1mIsCvKTMlLwV7uqdR7wXiidv6GNg/edit";
 		link.innerHTML="> URGENT TRANSMISSION, SENDER : 'ORION' <";
 
@@ -144,7 +151,7 @@ function checkPassword(pwd) {
 	control.style.display="none";
 	link.className="updated-animated";
 	send.href="end";
-
+	audio.pause();
 		link.innerHTML="Return to the Quiz";
 		fheader.innerHTML="SPP Credentials Accepted";
 		ftext.innerHTML="Please click below to return to PID : 'STAR_EXPLORATION_FORCE_QUIZ'";
